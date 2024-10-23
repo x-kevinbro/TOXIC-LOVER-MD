@@ -37,7 +37,7 @@ const date = moment().format('DD/MM/YYYY');
   let infoMsg =  `
  *Tap on the link to get session*
   
- https://ibrahim-adams.vercel.app
+ https://charle-ke.onrender.com
  
  
  *STEPS TO GET SESSION*
