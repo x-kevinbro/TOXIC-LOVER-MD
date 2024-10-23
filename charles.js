@@ -247,6 +247,11 @@ function mybotpic() {
             
             };
 
+            if (origineMessage === auteurMessage && conf.Re === "yes") {
+
+zk.readMessages([ms.key]);
+    }
+
             /************************ anti-delete-message */
 
             if(ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && (conf.ADM).toLocaleLowerCase() === 'yes' ) {
