@@ -1,8 +1,8 @@
 const googleTTS = require('google-tts-api');
-const {adams} = require("../Ibrahim/adams");
+const {adams} = require("../framework/zokou");
 
 
-adams( {
+zokou( {
   nomCom : "dit",
  categorie : "tts",
   reaction : "👄" },
@@ -25,7 +25,7 @@ console.log(url);
 }
 ) ;
 
-adams( {
+zokou( {
   nomCom : "itta",
  categorie : "tts",
   reaction : "👄" },
@@ -48,7 +48,7 @@ console.log(url);
 }
 ) ;
 
-adams( {
+zokou( {
   nomCom : "say",
  categorie : "tts",
   reaction : "👄" },
