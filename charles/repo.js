@@ -37,7 +37,7 @@ const date = moment().format('DD/MM/YYYY');
       *CHARLES MD IMPORTANT INFO* 
 ❒───────────────────❒
 *GITHUB LINK*
->https://github.com/Charleskenya1/CHARLE-KE
+> https://github.com/Charleskenya1/CHARLES-KE
 
 *WHATSAPP GROUP*
 > https://chat.whatsapp.com/I81wIoCXL4JJGfwnXcxEvx
