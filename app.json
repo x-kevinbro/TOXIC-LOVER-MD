@@ -24,11 +24,11 @@
       "value":"no",
       "required":false
     },
-    "AUTOREAD_MESSAGES":
+    "READ_MESSAGES":
     {
-      "description":"Your contact  will be read messages automatically(type yes to active or no to deactive  ; don't write in capital letter)",
+      "description":"use yes for the bot to autoread messsages and bluetick everyone who messages you,else set no",
       "value":"no",
-      "required":false   
+      "required":false
       },
     "CHATBOT":
     {
