@@ -47,7 +47,7 @@ const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("./bdd
 const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("./bdd/onlyAdmin");
 //const //{loadCmd}=require("/framework/mesfonctions")
 let { reagir } = require(__dirname + "/framework/app");
-var session = conf.session.replace(/ADAMS-2024;;;=>/g,"");
+var session = conf.session.replace(/ADAMS-2024;;;,"");
 const prefixe = conf.PREFIXE;
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
@@ -56,11 +56,11 @@ async function authentification() {
         //console.log("le data "+data)
         if (!fs.existsSync(__dirname + "/Jsonfile/creds.json")) {
             console.log("connexion en cour ...");
-            await fs.writeFileSync(__dirname + "/Jsonfile/creds.json", atob(session), "utf8");
+            await fs.writeFileSync(__dirname + "/jsonfile/creds.json", atob(session), "utf8");
             //console.log(session)
         }
-        else if (fs.existsSync(__dirname + "/Jsonfile/creds.json") && session != "zokk") {
-            await fs.writeFileSync(__dirname + "/Jsonfile/creds.json", atob(session), "utf8");
+        else if (fs.existsSync(__dirname + "/jsonfile/creds.json") && session != "zokk") {
+            await fs.writeFileSync(__dirname + "/jsonfile/creds.json", atob(session), "utf8");
         }
     }
     catch (e) {
@@ -75,7 +75,7 @@ const store = (0, baileys_1.makeInMemoryStore)({
 setTimeout(() => {
     async function main() {
         const { version, isLatest } = await (0, baileys_1.fetchLatestBaileysVersion)();
-        const { state, saveCreds } = await (0, baileys_1.useMultiFileAuthState)(__dirname + "/Jsonfile");
+        const { state, saveCreds } = await (0, baileys_1.useMultiFileAuthState)(__dirname + "/jsonfile");
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
