@@ -108,7 +108,6 @@ zokou({ nomCom: "gpt", reaction: "🤔", categorie: "IA" }, async (dest, zk, com
   
       // Regrouper les arguments en une seule chaîne séparée par "-"
       const question = arg.join(' ');
-      https://ibrahimadams-api-82050c0d37ab.herokuapp.com/api/ai/gpt4?apikey=ibraah-help&q=Which%20Model%20Are%20You?
       const response = await axios.get(`https://api.ibrahimadams.us.kg/api/ai/gpt4?q=${question}&apikey=ibraah-help`);
       
       const data = response.data;
