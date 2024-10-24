@@ -859,7 +859,7 @@ zk.ev.on('group-participants.update', async (group) => {
 ╰─────────────━┈⊷
 
 *Join Whatsapp Group For Updates*
-> https://chat.whatsapp.com/I81wIoCXL4JJGfwnXcxEvx
+> https://whatsapp.com/channel/0029Vao2hgeChq6HJ5bmlZ3K
                 
                 
                  `;
