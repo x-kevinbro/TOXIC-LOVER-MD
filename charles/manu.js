@@ -52,6 +52,15 @@ let infoMsg =  `
 ┇ ⏲️ ᴛɪᴍᴇ: ${temps}
 ┇ 📅 ᴅᴀᴛᴇ: ${date} 
 ╰─────═━┈┈━═──━┈⊷
+╭─────═━┈┈━═──━┈⊷
+ 『𝐂𝐇𝐀𝐍𝐍𝐄𝐋𝐒』
+  𝐘𝐎𝐔𝐓𝐔𝐁𝐄
+ https://youtube.com/@charles_odhiambo_official?si=kw62odfMmuam1JOo
+  𝐅𝐀𝐂𝐄𝐁𝐎𝐎𝐊
+ https://www.facebook.com/profile.php?id=100083389717604
+  𝐖𝐀𝐂𝐇𝐀𝐍𝐍𝐄𝐋
+https://whatsapp.com/channel/0029Vao2hgeChq6HJ5bmlZ3K
+╰─────═━┈┈━═──━┈⊷
 \n\n`;
     
     
