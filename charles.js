@@ -54,13 +54,13 @@ const readmore = more.repeat(4001)
 async function authentification() {
     try {
         //console.log("le data "+data)
-        if (!fs.existsSync(__dirname + "/Jsonfile/creds.json")) {
+        if (!fs.existsSync(__dirname + "/scan/creds.json")) {
             console.log("connexion en cour ...");
-            await fs.writeFileSync(__dirname + "/Jsonfile/creds.json", atob(session), "utf8");
+            await fs.writeFileSync(__dirname + "/scan/creds.json", atob(session), "utf8");
             //console.log(session)
         }
-        else if (fs.existsSync(__dirname + "/Jsonfile/creds.json") && session != "zokk") {
-            await fs.writeFileSync(__dirname + "/Jsonfile/creds.json", atob(session), "utf8");
+        else if (fs.existsSync(__dirname + "/scan/creds.json") && session != "zokk") {
+            await fs.writeFileSync(__dirname + "/scan/creds.json", atob(session), "utf8");
         }
     }
     catch (e) {
@@ -75,7 +75,7 @@ const store = (0, baileys_1.makeInMemoryStore)({
 setTimeout(() => {
     async function main() {
         const { version, isLatest } = await (0, baileys_1.fetchLatestBaileysVersion)();
-        const { state, saveCreds } = await (0, baileys_1.useMultiFileAuthState)(__dirname + "/Jsonfile");
+        const { state, saveCreds } = await (0, baileys_1.useMultiFileAuthState)(__dirname + "/scan");
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
