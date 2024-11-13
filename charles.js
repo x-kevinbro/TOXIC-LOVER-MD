@@ -107,8 +107,8 @@ setTimeout(() => {
         };
         const zk = (0, baileys_1.default)(sockOptions);
         store.bind(zk.ev);
-        
-        .// Other functions (auto-react, anti-delete, etc.) as needed
+
+      // Other functions (auto-react, anti-delete, etc.) as needed
         zk.ev.on("call", async (callData) => {
   if (conf.ANTICALL === 'yes') {
     const callId = callData[0].id;
