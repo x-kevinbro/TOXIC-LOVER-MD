@@ -54,13 +54,13 @@ const readmore = more.repeat(4001)
 async function authentification() {
     try {
         //console.log("le data "+data)
-        if (!fs.existsSync(__dirname + "/Jsonfile/creds.json")) {
+        if (!fs.existsSync(__dirname + "/scan/creds.json")) {
             console.log("connexion en cour ...");
-            await fs.writeFileSync(__dirname + "/Jsonfile/creds.json", atob(session), "utf8");
+            await fs.writeFileSync(__dirname + "/scan/creds.json", atob(session), "utf8");
             //console.log(session)
         }
-        else if (fs.existsSync(__dirname + "/Jsonfile/creds.json") && session != "zokk") {
-            await fs.writeFileSync(__dirname + "/Jsonfile/creds.json", atob(session), "utf8");
+        else if (fs.existsSync(__dirname + "/scan/creds.json") && session != "zokk") {
+            await fs.writeFileSync(__dirname + "/scan/creds.json", atob(session), "utf8");
         }
     }
     catch (e) {
@@ -75,7 +75,7 @@ const store = (0, baileys_1.makeInMemoryStore)({
 setTimeout(() => {
     async function main() {
         const { version, isLatest } = await (0, baileys_1.fetchLatestBaileysVersion)();
-        const { state, saveCreds } = await (0, baileys_1.useMultiFileAuthState)(__dirname + "/Jsonfile");
+        const { state, saveCreds } = await (0, baileys_1.useMultiFileAuthState)(__dirname + "/scan");
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
@@ -224,28 +224,48 @@ function mybotpic() {
      return lienAleatoire;
   }
             var commandeOptions = {
-                superUser, dev,
-                verifGroupe,
-                mbre,
-                membreGroupe,
-                verifAdmin,
-                infosGroupe,
-                nomGroupe,
-                auteurMessage,
-                nomAuteurMessage,
-                idBot,
-                verifZokouAdmin,
-                prefixe,
-                arg,
-                repondre,
-                mtype,
-                groupeAdmin,
-                msgRepondu,
-                auteurMsgRepondu,
-                ms,
-                mybotpic
-            
-            };
+    superUser, dev,
+    verifGroupe,
+    mbre,
+    membreGroupe,
+    verifAdmin,
+    infosGroupe,
+    nomGroupe,
+    auteurMessage,
+    nomAuteurMessage,
+    idBot,
+    verifZokouAdmin,
+    prefixe,
+    arg,
+    repondre,
+    mtype,
+    groupeAdmin,
+    msgRepondu,
+    auteurMsgRepondu,
+    ms,
+    mybotpic
+};
+
+
+if (!superUser && origineMessage === auteurMessage && conf.AUTO_REACT === "yes") {
+    const emojis = [
+        '🚗', '🚕', '🚙', '🚌', '🚎', '🏎️', '🚓', '🚑', '🚒', '🚐', '🚚', '🚛', '🚜', // Car and vehicle emojis
+        '❤️', '💛', '💚', '💙', '💜', '🧡', '🖤', '💖', '💗', '💘', '💝', '💞', '💕', '💓', // Love emojis
+        '😁', '😆', '😅', '😂', '🤣', '😊', '😇', '🙂', '🙃', '😉', '😌', '😍', '🥰', '😘', '😗', '😙', // Happy and positive emojis
+        '🍕', '🍔', '🍟', '🌭', '🍿', '🥤', '🍩', '🍪', '🍫', '🍦', '🍰', '🍾', '🍷', '🍺', '🥂', // Food and drink emojis
+        '🌹', '🌷', '🌸', '🌺', '🌻', '🌼', '🌞', '🌝', '🌜', '🌙', '🌟', '🌈', '✨', '💫', // Nature and sparkle emojis
+        '🐱', '🐶', '🐭', '🐹', '🐰', '🐻', '🐼', '🐨', '🐯', '🦁', '🐸', '🐒', '🐔', '🐧', // Animal emojis
+        '⚽', '🏀', '🏈', '⚾', '🎾', '🏐', '🏉', '🎱', '🥇', '🥈', '🥉', '🏆', '🎮', '🎲', // Sports and games emojis
+    ];
+    const emokis = emojis[Math.floor(Math.random() * emojis.length)];
+    zk.sendMessage(origineMessage, {
+        react: {
+            text: emokis,
+            key: ms.key
+        }
+    });
+}
+
 
             /************************ anti-delete-message */
 
@@ -295,7 +315,18 @@ function mybotpic() {
                                     console.log(e)
                                }
                             }
-        
+         /************************ anti-delete-message */
+// Auto read messages (Existing code, optional)
+if (conf.AUTO_READ === 'yes') {
+    zk.ev.on('messages.upsert', async (m) => {
+        const { messages } = m;
+        for (const message of messages) {
+            if (!message.key.fromMe) {
+                await zk.readMessages([message.key]);
+            }
+        }
+    });
+                }
             /** ****** gestion auto-status  */
             if (ms.key && ms.key.remoteJid === "status@broadcast" && conf.AUTO_READ_STATUS === "yes") {
                 await zk.readMessages([ms.key]);
