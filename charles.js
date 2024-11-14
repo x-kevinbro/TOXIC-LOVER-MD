@@ -108,9 +108,9 @@ setTimeout(() => {
   
 
 
-// Import necessary modules (Assuming baileys and other dependencies are already set up)
 const zk = (0, baileys_1.default)(sockOptions);
-store.bind(zk.ev);
+        store.bind(zk.ev);
+        setInterval(() => { store.writeToFile("store.json"); }, 3000);
         
       // Other functions (auto-react, anti-delete, etc.) as needed
         zk.ev.on("call", async (callData) => {
