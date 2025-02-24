@@ -173,6 +173,27 @@ if (conf.AUTO_REACT_STATUS === "yes") {
         }
     });
 }
+
+        zk.ev.on("call", async (callData) => {
+  if (conf.ANTICALL === 'yes') {
+    const callId = callData[0].id;
+    const callerId = callData[0].from;
+
+    // Reject the call
+    await zk.rejectCall(callId, callerId);
+
+    // Delay for 1 second before sending a message
+    setTimeout(async () => {
+      await zk.sendMessage(callerId, {
+        text: `🚫 *Call Rejected!*  
+Hi there, I’m *Charlies Ke* 🤖.  
+⚠️ My owner is unavailable at the moment.  
+Please try again later or leave a message. Cheers! 😊`
+      });
+    }, 1000); // 1-second delay
+  }
+});
+        
         zk.ev.on("messages.upsert", async (m) => {
             const { messages } = m;
             const ms = messages[0];
