@@ -1,14 +1,14 @@
 <p align="center">  
   <a href="https://files.catbox.moe/n6dmx3.jpeg">
     <img alt="secktor docs" height="300" src="https://files.catbox.moe/n6dmx3.jpeg">
-    <h1 align="center"> CHARLESKE - POWERED BY IBRAHIM ADAMS</h1>
+    <h1 align="center"> CHARLESKE - POWERED BY CHARLESKE</h1>
   </a>
 </p>  
 
 ---
 
 <p align="center">
-  <a href="https://buymeacoffee.com/ibrahimadams" target="_blank">
+  <a href="https://buymeacoffee.com/charleske" target="_blank">
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
   </a>
 </p>
@@ -16,16 +16,16 @@
 ---
 
 <p align="center">
-  <a href="https://github.com/ibrahimaitech"><img title="Author" src="https://img.shields.io/badge/ibrahimaitech-black?style=for-the-badge&logo=Github"></a> 
+  <a href="https://github.com/charleske"><img title="Author" src="https://img.shields.io/badge/charleske-black?style=for-the-badge&logo=Github"></a> 
   <a href="https://whatsapp.com/channel/0029VaZuGSxEawdxZK9CzM0Y"><img title="Channel" src="https://img.shields.io/badge/CHANNEL-black?style=for-the-badge&logo=whatsapp"></a> 
   <a href="https://wa.me/25471077266"><img title="Chat" src="https://img.shields.io/badge/CHAT US-black?style=for-the-badge&logo=whatsapp"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/ibrahimaitech?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/ibrahimaitech?label=Followers&style=social"></a>
-  <a href="https://github.com/ibrahimaitech/BMW-MD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/ibrahimaitech/BMW-MD?&style=social"></a>
-  <a href="https://github.com/ibrahimaitech/BMW-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/ibrahimaitech/BMW-MD?style=social"></a>
-  <a href="https://github.com/ibrahimaitech/BMW-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/ibrahimaitech/BMW-MD?label=Watching&style=social"></a>
+  <a href="https://github.com/charleske?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/charleske?label=Followers&style=social"></a>
+  <a href="https://github.com/charleske/BMW-MD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/charleske/BMW-MD?&style=social"></a>
+  <a href="https://github.com/charleske/BMW-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/charleske/BMW-MD?style=social"></a>
+  <a href="https://github.com/charleske/BMW-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/charleske/BMW-MD?label=Watching&style=social"></a>
 </p>
 
 ---
@@ -40,7 +40,7 @@
 
 ---
 
-## 🧚‍♂️ IBRAHIM ADAMS' DEPLOYMENT OPTIONS
+## 🧚‍♂️ CHARLESKE'S DEPLOYMENT OPTIONS
 
 ### 🔹 DEPLOY ON HEROKU
 
@@ -66,4 +66,4 @@
 
 ---
 
-**© 2025 CHARLESKE | Built with ❤️ by Ibrahim Adams**
+**© 2025 CHARLESKE | Built with ❤️ by CHARLESKE**
