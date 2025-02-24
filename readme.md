@@ -43,12 +43,9 @@
 ## 🧚‍♂️ IBRAHIM ADAMS' DEPLOYMENT OPTIONS
 
 ### 🔹 DEPLOY ON HEROKU
-- **Deploy Bottom Bot:**  
-  [![Click Here](https://img.shields.io/badge/➤Click-Here-red.svg)](https://bmw-verification.vercel.app/)
-  
-- **Deploy Normal Bot:**  
-  [![Click Here](https://img.shields.io/badge/➤Click-Here-red.svg)](https://bmw-verification.vercel.app/nomal.html)
 
+  [![Click Here](https://img.shields.io/badge/➤Click-Here-red.svg)](https://dashboard.heroku.com/new?template=https://github.com/Charleskenya1/CHARLESKE)
+  
 ### 🔹 DEPLOY ON OTHER PLATFORMS
 - **Render:**  
   [![Click Here](https://img.shields.io/badge/➤Click-Here-blue.svg)](https://render.com)
