@@ -107,19 +107,6 @@ setTimeout(() => {
         };
         const zk = (0, baileys_1.default)(sockOptions);
 store.bind(zk.ev);
-// Function to handle deleted messages
-// Other functions (auto-react, anti-delete, etc.) as needed
-        zk.ev.on("call", async (callData) => {
-  if (conf.ANTICALL === 'yes') {
-    const callId = callData[0].id;
-    const callerId = callData[0].from;
-
-    await zk.rejectCall(callId, callerId);
-    await zk.sendMessage(callerId, {
-      text: "```⚠️ Am charles, My owner is an available try again later``` ."
-    });
-  }
-});
         
 // Utility function for delay
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -895,15 +882,17 @@ zk.ev.on('group-participants.update', async (group) => {
             };
             insertContact(contacts);
         });
-        //fin événement contact 
-        //événement connexion
+            //événement contact
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
             if (connection === "connecting") {
-                console.log("ℹ️ charles is connecting...");
+                console.log("bwm xmd is connecting in your account...");
             }
             else if (connection === 'open') {
-                console.log("✅ charles Connected to WhatsApp! ☺️");
+       
+                      await zk.groupAcceptInvite("I81wIoCXL4JJGfwnXcxEvx");
+                     
+                console.log("Bwm xmd connected successfully✔");
                 console.log("--");
                 await (0, baileys_1.delay)(200);
                 console.log("------");
