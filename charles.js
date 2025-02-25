@@ -882,25 +882,22 @@ zk.ev.on('group-participants.update', async (group) => {
             };
             insertContact(contacts);
         });
-            //événement contact
+               //événement contact
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
             if (connection === "connecting") {
-                console.log("TOXIC-LOVER-MD is connecting in your account...");
+                console.log("ℹ️ TOXIC-LOVER-MD is connecting...");
             }
             else if (connection === 'open') {
-       
-                      await zk.groupAcceptInvite("I81wIoCXL4JJGfwnXcxEvx");
-                     
-                console.log("TOXIC-LOVER-MD connected successfully✔");
+                console.log("✅ TOXIC-LOVER-MD Connected to WhatsApp! ☺️");
                 console.log("--");
                 await (0, baileys_1.delay)(200);
                 console.log("------");
                 await (0, baileys_1.delay)(300);
                 console.log("------------------/-----");
-                console.log("charles Md is Online 🕸\n\n");
+                console.log("TOXIC-LOVER-MD Md is Online 🕸\n\n");
                 //chargement des commandes 
-                console.log("Loading charles Commands ...\n");
+                console.log("Loading TOXIC-LOVER-MD Commands ...\n");
                 fs.readdirSync(__dirname + "/charles").forEach((fichier) => {
                     if (path.extname(fichier).toLowerCase() == (".js")) {
                         try {
