@@ -70,7 +70,7 @@ commands.forEach((command) => {
         try {
             // Send the follow-up image first with a caption
             await zk.sendMessage(dest, {
-                image: { url: "https://files.catbox.moe/xx6ags.jpeg" }, // Updated image
+                image: { url: "https://files.catbox.moe/k3pmh3.jpg" }, // Updated image
                 caption: `✨ Repository Highlights ✨\n\n🛠️ Developed by *TOXIC-LOVER-MD*\n\nRepo URL:\nhttps://github.com/toxiclover-tech/TOXIC-LOVER-MD`,
             });
 
