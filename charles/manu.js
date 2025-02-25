@@ -13,7 +13,7 @@ zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions
     let { ms, repondre, prefixe, nomAuteurMessage } = commandeOptions;
     let { cm } = require(__dirname + "/../framework/zokou");
     var coms = {};
-    var mode = (s.MODE.toLowerCase() === "yes") ? "public" : "private";
+    var mode = (s.MODE.toLowerCase() === "yes") ? "PUBLIC" : "PRIVATE";
 
     cm.map((com) => {
         if (!coms[com.categorie]) coms[com.categorie] = [];
@@ -24,52 +24,41 @@ zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions
     const temps = moment().format('HH:mm:ss');
     const date = moment().format('DD/MM/YYYY');
 
-    let infoMsg = `🎩 *Hello ${nomAuteurMessage}!* 🎩
-━━━━━━━━━━━━━━━━━━━━
-🚀 *BOT NAME:* 𝐂𝐇𝐀𝐑𝐋𝐄𝐒 𝐊𝐄  
-━━━━━━━━━━━━━━━━━━━━
-🌍 *SYSTEM INFO:*
-💻 ᴘʟᴀᴛғᴏʀᴍ: *${os.platform()}*
-━━━━━━━━━━━━━━━━━━━━
-⚙️ *BOT STATUS:*
-⭕ ᴍᴏᴅᴇ: *${mode}*
-💫 ᴘʀᴇғɪx: *[ ${prefixe} ]*
-⏳ ᴛɪᴍᴇ: ${temps}
-📆 ᴅᴀᴛᴇ: ${date}
-━━━━━━━━━━━━━━━━━━━━
-📢 *𝐂𝐇𝐀𝐍𝐍𝐄𝐋𝐒 & 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐈𝐎𝐍𝐒:*  
-📺 𝐘𝐎𝐔𝐓𝐔𝐁𝐄:  
-🔗 https://youtube.com/@charles_odhiambo_official?si=kw62odfMmuam1JOo  
-📘 𝐅𝐀𝐂𝐄𝐁𝐎𝐎𝐊:  
-🔗 https://www.facebook.com/profile.php?id=100083389717604  
-📢 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐆𝐑𝐎𝐔𝐏:  
-🔗 https://chat.whatsapp.com/I81wIoCXL4JJGfwnXcxEvx  
-📸 𝐈𝐍𝐒𝐓𝐀𝐆𝐑𝐀𝐌:  
-🔗 https://www.instagram.com/charles_a_ke  
-━━━━━━━━━━━━━━━━━━━━
-${readMore}
-📜 *COMMAND MENU* 📜
-━━━━━━━━━━━━━━━━━━━━\n`;
+    let infoMsg = `┏━━━⚡ *TOXIC-LOVER-MD* ⚡━━━┓
+┃ 🔥  ʜᴇʟʟᴏ, *${nomAuteurMessage}*! 🔥
+┣━━━━━━━━━━━━━━━━━━━━━
+┃ 📌 *sʏsᴛᴇᴍ ɪɴғᴏ:*
+┃ 💻 ᴘʟᴀᴛғᴏʀᴍ: *${os.platform()}*
+┣━━━━━━━━━━━━━━━━━━━━━
+┃ ⚙️ *ʙᴏᴛ sᴛᴀᴛᴜs:*
+┃ 🔘 ᴍᴏᴅᴇ: *${mode}*
+┃ 🚀 ᴘʀᴇғɪx: *[ ${prefixe} ]*
+┃ ⏳ ᴛɪᴍᴇ: *${temps}*
+┃ 📆 ᴅᴀᴛᴇ: *${date}*
+┣━━━━━━━━━━━━━━━━━━━━━
+┃ ${readMore}
+┃ 🎩 *ᴄᴏᴍᴍᴀɴᴅ ᴍᴇɴᴜ* 🎩
+┣━━━━━━━━━━━━━━━━━━━━━\n`;
 
     let menuMsg = ``;
 
     for (const cat in coms) {
-        menuMsg += `🔹 *${cat.toUpperCase()}* 🔹\n`;
+        menuMsg += `┣ 🔹 *${cat.toUpperCase()}* 🔹\n`;
         for (const cmd of coms[cat]) {
-            menuMsg += `   🔸 ${cmd}\n`;
+            menuMsg += `┃   🔸 ${cmd}\n`;
         }
-        menuMsg += `━━━━━━━━━━━━━━━━━━━━\n`;
+        menuMsg += `┣━━━━━━━━━━━━━━━━━━━━━\n`;
     }
 
-    menuMsg += `✨ *𝐂𝐇𝐀𝐑𝐋𝐄𝐒 𝐊𝐄 𝐁𝐎𝐓 - 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒅 𝒃𝒚 𝑰𝒃𝒓𝒂𝒉𝒊𝒎 𝑨𝒅𝒂𝒎𝒔* ✨`;
+    menuMsg += `┗✨ *ᴛᴏxɪᴄ-ʟᴏᴠᴇʀ-ᴍᴅ - ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ ᴛʜᴇ ʙᴇsᴛ!* ✨`;
 
-    let imageUrl = "https://files.catbox.moe/n6dmx3.jpeg";
+    let imageUrl = "https://files.catbox.moe/k3pmh3.jpg";
 
     try {
         zk.sendMessage(dest, { 
             image: { url: imageUrl }, 
             caption: infoMsg + menuMsg, 
-            footer: "© Charles KE" 
+            footer: "© TOXIC-LOVER-MD" 
         }, { quoted: ms });
     } catch (e) {
         console.log("🥵 Menu error: " + e);
