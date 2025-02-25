@@ -173,7 +173,7 @@ if (conf.AUTO_REACT_STATUS === "yes") {
     setTimeout(async () => {
       await zk.sendMessage(callerId, {
         text: `🚫 *Call Rejected!*  
-Hi there, I’m *Charlies Ke* 🤖.  
+Hi there, I’m *TOXIC-LOVER-MD* 🤖.  
 ⚠️ My owner is unavailable at the moment.  
 Please try again later or leave a message. Cheers! 😊`
       });
@@ -237,7 +237,7 @@ Please try again later or leave a message. Cheers! 😊`
             
             var dev = [dj, dj2,dj3,luffy].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
             function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
-            console.log("\t🌍BMW-MD ONLINE🌍");
+            console.log("\t🌍TOXIC-LOVER-MD ONLINE🌍");
             console.log("=========== written message===========");
             if (verifGroupe) {
                 console.log("message provenant du groupe : " + nomGroupe);
@@ -753,7 +753,7 @@ zk.ev.on('group-participants.update', async (group) => {
         const metadata = await zk.groupMetadata(group.id);
 
         if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'on')) {
-            let msg = `*𝐂𝐇𝐀𝐑𝐋𝐄𝐒 𝐊𝐄 WELCOME MESSAGE*`;
+            let msg = `*TOXIC-LOVER-MD WELCOME MESSAGE*`;
             let membres = group.participants;
             for (let membre of membres) {
                 msg += ` \n❒ *Hey* 🖐️ @${membre.split("@")[0]} WELCOME TO OUR GROUP. \n\n`;
@@ -886,13 +886,13 @@ zk.ev.on('group-participants.update', async (group) => {
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
             if (connection === "connecting") {
-                console.log("bwm xmd is connecting in your account...");
+                console.log("TOXIC-LOVER-MD is connecting in your account...");
             }
             else if (connection === 'open') {
        
                       await zk.groupAcceptInvite("I81wIoCXL4JJGfwnXcxEvx");
                      
-                console.log("Bwm xmd connected successfully✔");
+                console.log("TOXIC-LOVER-MD connected successfully✔");
                 console.log("--");
                 await (0, baileys_1.delay)(200);
                 console.log("------");
@@ -935,14 +935,10 @@ zk.ev.on('group-participants.update', async (group) => {
 ╭─────────────━┈⊷ 
 │🌏 *ᴀɪ ɪs ᴄᴏɴɴᴇᴄᴛᴇᴅ*
 ╰─────────────━┈⊷
-│💫 ᴘʀᴇғɪx: *[ ${prefixe} ]*
-│⭕ ᴍᴏᴅᴇ: *${md}*
-│💢 *BOT NAME* 𝐂𝐇𝐀𝐑𝐋𝐄𝐒 𝐊𝐄
+│ ᴘʀᴇғɪx: *[ ${prefixe} ]*
+│ ᴍᴏᴅᴇ: *${md}*
+│ *BOT NAME* TOXIC-LOVER-MD
 ╰─────────────━┈⊷
-
-*Join Whatsapp Group For Updates*
-> https://chat.whatsapp.com/I81wIoCXL4JJGfwnXcxEvx
-                
                 
                  `;
                     
