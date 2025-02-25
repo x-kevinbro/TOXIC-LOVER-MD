@@ -33,7 +33,7 @@ zokou({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest, z
   tag +=`
   
 ╭─────────────━┈⊷ 
-│🔰 𝐂𝐇𝐀𝐑𝐋𝐄𝐒 𝐊𝐄 𝐓𝐀𝐆
+│🔰 TOXIC-LOVER-MD
 ╰─────────────━┈⊷ \n
 │👥 *Group* : ${nomGroupe} 
 │👤 *Hey😀* : *${nomAuteurMessage}* 
