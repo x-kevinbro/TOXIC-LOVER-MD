@@ -59,9 +59,9 @@ zokou({ nomCom: "dev", categorie: "General", reaction: "🚘" }, async (dest, zk
     const { ms, mybotpic } = commandeOptions;
 
     const devs = [
-        { nom: "Adams", numero: "254739937062" },
-        { nom: "᚛Ibrahim᚜", numero: "254710772666" },
-        { nom: "BELTAH TECH", numero: "254114141192" },
+        { nom: "TOXIC LOVER", numero: "254717263689" },
+        { nom: "᚛Ibrahim Adams᚜", numero: "254710772666" },
+        { nom: "Adams kenya", numero: "254727716045" },
         // Add more developers here with their names and numbers
     ];
 
@@ -96,6 +96,6 @@ zokou({ nomCom: "dev", categorie: "General", reaction: "🚘" }, async (dest, zk
 zokou({ nomCom: "support", categorie: "General" }, async (dest, zk, commandeOptions) => {
     const { ms, repondre, auteurMessage } = commandeOptions;
 
-    repondre("THANK YOU FOR CHOOSING TOXIC-LOVER-MD, HERE ARE OUR SUPPORTIVE LINKS\n\n ☉ CHANNEL LINK IS HERE ☉ \n\n❒⁠⁠⁠⁠[https://whatsapp.com/channel/0029VaZuGSxEawdxZK9CzM0Y] \n\n ☉ GROUP LINK IS HERE ☉\n\n❒⁠⁠⁠⁠[https://chat.whatsapp.com/F5BXJci8EDS9AJ6sfKMXIS] \n\n ☉YOUTUBE LINK IS HERE ☉\n\n❒⁠⁠⁠⁠[https://www.youtube.com/@ibrahimaitech] \n\n\n𝑪𝒓𝒆𝒂𝒕𝒆𝒅 𝒃𝒚 𝑰𝒃𝒓𝒂𝒉𝒊𝒎 𝑨𝒅𝒂𝒎𝒔");
+    repondre("THANK YOU FOR CHOOSING TOXIC-LOVER-MD, HERE ARE OUR SUPPORTIVE LINKS\n\n ☉ CHANNEL LINK IS HERE ☉ \n\n❒⁠⁠⁠⁠[https://whatsapp.com/channel/0029VarDt9t30LKL1SoYXy26] \n\n ☉ GROUP LINK IS HERE ☉\n\n❒⁠⁠⁠⁠[https://chat.whatsapp.com/F5BXJci8EDS9AJ6sfKMXIS] \n\n ☉YOUTUBE LINK IS HERE ☉\n\n❒⁠⁠⁠⁠[https://www.youtube.com/@ibrahimaitech] \n\n\n𝑪𝒓𝒆𝒂𝒕𝒆𝒅 𝒃𝒚 𝑰𝒃𝒓𝒂𝒉𝒊𝒎 𝑨𝒅𝒂𝒎𝒔");
     await zk.sendMessage(auteurMessage, { text: `THANK YOU FOR CHOOSING TOXIC-LOVER-MD, MAKE SURE YOU FOLLOW THESE LINKS.` }, { quoted: ms });
 });
