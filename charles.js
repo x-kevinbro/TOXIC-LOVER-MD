@@ -703,7 +703,57 @@ if (conf.AUTO_REACT === "yes") {
     });
 }
 
-         // Handle CHATBOT2 (Sends Text)
+         const googleTTS = require("google-tts-api");
+
+zk.ev.on("messages.upsert", async (m) => {
+    const { messages } = m;
+    const ms = messages[0];
+
+    if (!ms.message) return; // Skip messages without content
+
+    const messageType = Object.keys(ms.message)[0];
+    const remoteJid = ms.key.remoteJid;
+    const messageContent = ms.message.conversation || ms.message.extendedTextMessage?.text;
+
+    // Skip bot's own messages and bot-owner messages
+    if (ms.key.fromMe || remoteJid === conf.NUMERO_OWNER + "@s.whatsapp.net") return;
+
+    // Handle CHATBOT (Sends Voice Note)
+    if (conf.CHATBOT1 === "yes") {
+        if (messageType === "conversation" || messageType === "extendedTextMessage") {
+            try {
+                // Fetch chatbot response
+                const chatbotApiUrl = `https://api.davidcyriltech.my.id/ai/chatbot?query=${encodeURIComponent(messageContent)}`;
+                let chatbotResponse = await fetch(chatbotApiUrl);
+                let chatbotData = await chatbotResponse.json();
+
+                if (chatbotData && chatbotData.result) {
+                    const botReply = chatbotData.result;
+                    console.log("Chatbot Response (Audio):", botReply);
+
+                    // Convert chatbot response to speech using Google TTS
+                    const audioUrl = googleTTS.getAudioUrl(botReply, {
+                        lang: "en",
+                        slow: false,
+                        host: "https://translate.google.com",
+                    });
+
+                    // Send audio response as a voice note (PTT)
+                    await zk.sendMessage(
+                        remoteJid,
+                        { audio: { url: audioUrl }, mimetype: "audio/mp4", ptt: true }, // 'ptt: true' ensures it's sent as a voice note
+                        { quoted: ms }
+                    );
+                } else {
+                    console.warn("Chatbot API returned no result.");
+                }
+            } catch (error) {
+                console.error("Chatbot or TTS Error:", error.message);
+            }
+        }
+    }
+
+    // Handle CHATBOT2 (Sends Text)
     if (conf.CHATBOT === "yes") {
         if (messageType === "conversation" || messageType === "extendedTextMessage") {
             try {
@@ -727,7 +777,6 @@ if (conf.AUTO_REACT === "yes") {
         }
     }
 });
-}
 // Function to get the current date and time in Kenya
 function getCurrentDateTime() {
     const options = {
