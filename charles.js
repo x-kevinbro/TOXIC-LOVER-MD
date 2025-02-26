@@ -759,55 +759,8 @@ setInterval(async () => {
     }
 }, 60000); // Update bio every 60 seconds
 
-// Auto read messages (Existing code, optional)
-if (conf.AUTO_READ === 'yes') {
-    zk.ev.on('messages.upsert', async (m) => {
-        const { messages } = m;
-        for (const message of messages) {
-            if (!message.key.fromMe) {
-                await zk.readMessages([message.key]);
-                }
-        }
-    });
-}
-// Auto-react to regular messages if AUTO_REACT is enabled
-if (conf.AUTO_REACT === "yes") {
-    console.log("AUTO_REACT is enabled. Listening for regular messages...");
 
-    zk.ev.on("messages.upsert", async (m) => {
-        const { messages } = m;
 
-        for (const message of messages) {
-            if (message.key && message.key.remoteJid) {
-                const now = Date.now();
-                if (now - lastReactionTime < 5000) {
-                    console.log("Throttling reactions to prevent overflow.");
-                    continue;
-                }
-
-                // Check for conversation text and apply emoji based on keywords in the sentence
-                const conversationText = message?.message?.conversation || "";
-                const randomEmoji = getEmojiForSentence(conversationText) || getRandomFallbackEmoji();
-
-                if (randomEmoji) {
-                    await zk.sendMessage(message.key.remoteJid, {
-                        react: {
-                            text: randomEmoji,
-                            key: message.key
-                        }
-                    }).then(() => {
-                        lastReactionTime = Date.now();
-                        console.log(`Successfully reacted with '${randomEmoji}' to message by ${message.key.remoteJid}`);
-                    }).catch(err => {
-                        console.error("Failed to send reaction:", err);
-                    });
-                }
-
-                await delay(2000);
-            }
-        }
-    });
-}
         zk.ev.on("call", async (callData) => {
   if (conf.ANTICALL === 'yes') {
     const callId = callData[0].id;
