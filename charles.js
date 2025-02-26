@@ -727,7 +727,7 @@ if (conf.AUTO_REACT === "yes") {
         }
     }
 });
-
+}
 // Function to get the current date and time in Kenya
 function getCurrentDateTime() {
     const options = {
