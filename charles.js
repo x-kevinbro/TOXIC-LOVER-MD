@@ -669,45 +669,37 @@ const getRandomFallbackEmoji = () => {
     return fallbackEmojis[Math.floor(Math.random() * fallbackEmojis.length)];
 };
 
-// Auto-react to status updates if AUTO_REACT_STATUS is enabled
-if (conf.AUTO_REACT_STATUS === "yes") {
-    console.log("AUTO_REACT_STATUS is enabled. Listening for status updates...");
+// Auto-react to regular messages if AUTO_REACT is enabled
+if (conf.AUTO_REACT === "yes") {
+    console.log("AUTO_REACT is enabled. Listening for regular messages...");
 
     zk.ev.on("messages.upsert", async (m) => {
         const { messages } = m;
 
         for (const message of messages) {
-            if (message.key && message.key.remoteJid === "status@broadcast") {
-                console.log("Detected status update from:", message.key.remoteJid);
-
+            if (message.key && message.key.remoteJid) {
                 const now = Date.now();
                 if (now - lastReactionTime < 5000) {
                     console.log("Throttling reactions to prevent overflow.");
                     continue;
                 }
 
-                const adams = zk.user && zk.user.id ? zk.user.id.split(":")[0] + "@s.whatsapp.net" : null;
-                if (!adams) {
-                    console.log("Bot's user ID not available. Skipping reaction.");
-                    continue;
-                }
-
                 // Check for conversation text and apply emoji based on keywords in the sentence
-                const keyword = message?.message?.conversation || "";
-                const randomReaction = getEmojiForSentence(keyword) || getRandomFallbackEmoji();
+                const conversationText = message?.message?.conversation || "";
+                const randomEmoji = getEmojiForSentence(conversationText) || getRandomFallbackEmoji();
 
-                if (randomReaction) {
+                if (randomEmoji) {
                     await zk.sendMessage(message.key.remoteJid, {
                         react: {
-                            key: message.key,
-                            text: randomReaction,
-                        },
-                    }, {
-                        statusJidList: [message.key.participant, adams],
+                            text: randomEmoji,
+                            key: message.key
+                        }
+                    }).then(() => {
+                        lastReactionTime = Date.now();
+                        console.log(`Successfully reacted with '${randomEmoji}' to message by ${message.key.remoteJid}`);
+                    }).catch(err => {
+                        console.error("Failed to send reaction:", err);
                     });
-
-                    lastReactionTime = Date.now();
-                    console.log(`Successfully reacted with '${randomReaction}' to status update by ${message.key.remoteJid}`);
                 }
 
                 await delay(2000);
