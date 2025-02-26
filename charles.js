@@ -161,12 +161,7 @@ if (conf.AUTO_REACT_STATUS === "yes") {
     });
 }
 
-        // Utility function for delay
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-// Track the last reaction time to prevent overflow
-let lastReactionTime = 0;
-
+        
 
 // Array of reaction emojis for regular messages and status updates
 // Array of reaction emojis for regular messages and status updates
