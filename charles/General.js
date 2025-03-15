@@ -8,44 +8,34 @@ zokou({ nomCom: "owner", categorie: "General", reaction: "🚘" }, async (dest, 
     const thsudo = await isSudoTableNotEmpty();
 
     if (thsudo) {
-        let msg = `*My Super-User*\n
-     *Owner Number*\n :
-- 🌟 @${conf.NUMERO_OWNER}
-
------- *other sudos* -----\n`;
+        let msg = `*My Super-User*\n\n*Owner Number*\n- 🌟 @${conf.NUMERO_OWNER}\n\n------ *Other Sudos* -----\n`;
 
         let sudos = await getAllSudoNumbers();
 
         for (const sudo of sudos) {
             if (sudo) {
-                sudonumero = sudo.replace(/[^0-9]/g, '');
+                let sudonumero = sudo.replace(/[^0-9]/g, '');
                 msg += `- 💼 @${sudonumero}\n`;
-            } else {
-                return;
             }
         }
 
         const ownerjid = conf.NUMERO_OWNER.replace(/[^0-9]/g, '') + "@s.whatsapp.net";
-        const mentionedJid = sudos.concat([ownerjid]);
-        console.log(sudos);
-        console.log(mentionedJid);
+        const mentionedJid = sudos.map(sudo => sudo.replace(/[^0-9]/g, '') + "@s.whatsapp.net").concat([ownerjid]);
 
-        zk.sendMessage(
-            dest,
-            {
-                image: { url: mybotpic() },
-                caption: msg,
-                mentions: mentionedJid
-            }
-        );
+        zk.sendMessage(dest, {
+            image: { url: mybotpic() },
+            caption: msg,
+            mentions: mentionedJid
+        });
     } else {
         const vcard =
-            'BEGIN:VCARD\n' + // metadata of the contact card
+            'BEGIN:VCARD\n' +
             'VERSION:3.0\n' +
-            'FN:' + conf.OWNER_NAME + '\n' + // full name
-            'ORG:undefined;\n' + // the organization of the contact
-            'TEL;type=CELL;type=VOICE;waid=' + conf.NUMERO_OWNER + ':+' + conf.NUMERO_OWNER + '\n' + // WhatsApp ID + phone number
+            'FN:' + conf.OWNER_NAME + '\n' +
+            'ORG:undefined;\n' +
+            'TEL;type=CELL;type=VOICE;waid=' + conf.NUMERO_OWNER + ':+' + conf.NUMERO_OWNER + '\n' +
             'END:VCARD';
+
         zk.sendMessage(dest, {
             contacts: {
                 displayName: conf.OWNER_NAME,
@@ -59,13 +49,10 @@ zokou({ nomCom: "dev", categorie: "General", reaction: "🚘" }, async (dest, zk
     const { ms, mybotpic } = commandeOptions;
 
     const devs = [
-        { nom: "TOXIC LOVER", numero: "254717263689" },
-        { nom: "᚛Ibrahim Adams᚜", numero: "254710772666" },
-        { nom: "Adams kenya", numero: "254727716045" },
-        // Add more developers here with their names and numbers
+        { nom: "TOXIC LOVER", numero: "254717263689" }
     ];
 
-    let message = "WELCOME TO TOXIC-LOVER-MD HELP CENTER! ASK FOR HELP FROM ANY OF THE DEVELOPERS BELOW:\n\n";
+    let message = "WELCOME TO TOXIC-LOVER-MD HELP CENTER! ASK FOR HELP FROM THE DEVELOPER BELOW:\n\n";
     for (const dev of devs) {
         message += `----------------\n• ${dev.nom} : https://wa.me/${dev.numero}\n`;
     }
@@ -76,26 +63,25 @@ zokou({ nomCom: "dev", categorie: "General", reaction: "🚘" }, async (dest, zk
             zk.sendMessage(dest, { video: { url: lien }, caption: message }, { quoted: ms });
         } catch (e) {
             console.log("🥵🥵 Menu erreur " + e);
-            repondre("🥵🥵 Menu erreur " + e);
         }
-    }
-    // Vérification pour .jpeg ou .png
-    else if (lien.match(/\.(jpeg|png|jpg)$/i)) {
+    } else if (lien.match(/\.(jpeg|png|jpg)$/i)) {
         try {
             zk.sendMessage(dest, { image: { url: lien }, caption: message }, { quoted: ms });
         } catch (e) {
             console.log("🥵🥵 Menu erreur " + e);
-            repondre("🥵🥵 Menu erreur " + e);
         }
     } else {
-        repondre(lien);
-        repondre("link error");
+        zk.sendMessage(dest, { text: "Link error" }, { quoted: ms });
     }
 });
 
 zokou({ nomCom: "support", categorie: "General" }, async (dest, zk, commandeOptions) => {
-    const { ms, repondre, auteurMessage } = commandeOptions;
+    const { ms, repondre } = commandeOptions;
 
-    repondre("THANK YOU FOR CHOOSING TOXIC-LOVER-MD, HERE ARE OUR SUPPORTIVE LINKS\n\n ☉ CHANNEL LINK IS HERE ☉ \n\n❒⁠⁠⁠⁠[https://whatsapp.com/channel/0029VarDt9t30LKL1SoYXy26] \n\n ☉ GROUP LINK IS HERE ☉\n\n❒⁠⁠⁠⁠[https://chat.whatsapp.com/F5BXJci8EDS9AJ6sfKMXIS] \n\n ☉YOUTUBE LINK IS HERE ☉\n\n❒⁠⁠⁠⁠[https://www.youtube.com/@ibrahimaitech] \n\n\n𝑪𝒓𝒆𝒂𝒕𝒆𝒅 𝒃𝒚 𝑰𝒃𝒓𝒂𝒉𝒊𝒎 𝑨𝒅𝒂𝒎𝒔");
-    await zk.sendMessage(auteurMessage, { text: `THANK YOU FOR CHOOSING TOXIC-LOVER-MD, MAKE SURE YOU FOLLOW THESE LINKS.` }, { quoted: ms });
+    let supportMessage = `Channel link 👇👇👇\nhttps://whatsapp.com/channel/0029VawCel7GOj9ktLjkxQ3g\n\n` +
+        `Group 👇👇👇\nhttps://chat.whatsapp.com/JxHA39xaMPW449rhnABBz2\n\n` +
+        `Instagram 👇👇👇\nhttps://www.instagram.com/bravin126?igsh=MWJvZzBnN3RsYTRsag==\n\n` +
+        `@toxic lover`;
+
+    repondre(supportMessage);
 });
