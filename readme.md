@@ -1,7 +1,7 @@
 
 <p align="center">  
   <a href="https://files.catbox.moe/k3pmh3.jpg">
-    <img alt="secktor docs" height="300" src="https://files.catbox.moe/k3pmh3.jpg">
+    <img alt="secktor docs" height="300" src="https://files.catbox.moe/inrajt.jpg">
     <h1 align="center"> TOXIC LOVER MD - POWERED BY TOXIC LOVER MD</h1>
   </a>
 </p>  
