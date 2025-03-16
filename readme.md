@@ -18,8 +18,8 @@
 
 <p align="center">
   <a href="https://github.com/toxiclovermd"><img title="Author" src="https://img.shields.io/badge/toxiclovermd-black?style=for-the-badge&logo=Github"></a> 
-  <a href="https://whatsapp.com/channel/0029VarDt9t30LKL1SoYXy26"><img title="Channel" src="https://img.shields.io/badge/CHANNEL-black?style=for-the-badge&logo=whatsapp"></a> 
-  <a href="https://wa.me/25471077266"><img title="Chat" src="https://img.shields.io/badge/CHAT US-black?style=for-the-badge&logo=whatsapp"></a>
+  <a href="   https://whatsapp.com/channel/0029VawCel7GOj9ktLjkxQ3g"><img title="Channel" src="https://img.shields.io/badge/CHANNEL-black?style=for-the-badge&logo=whatsapp"></a> 
+  <a href="https://wa.me/254717263689"><img title="Chat" src="https://img.shields.io/badge/CHAT US-black?style=for-the-badge&logo=whatsapp"></a>
 </p>
 
 <p align="center">
