@@ -49,6 +49,12 @@
       "value":"no",
       "required":false
     },
+	    "AUTO_BIO":
+    {
+      "description":"Enter yes for your bot to auto bio",
+      "value":"yes",
+      "required":false
+    },
 	
 	"ANTICALL":
     {
