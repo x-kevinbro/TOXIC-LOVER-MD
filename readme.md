@@ -25,9 +25,9 @@
 
 <p align="center">
   <a href="https://github.com/toxiclovermd?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/toxiclovermd?label=Followers&style=social"></a>
-  <a href="https://github.com/toxiclovermd/BMW-MD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/toxiclovermd/BMW-MD?&style=social"></a>
+  <a href="https://github.com/toxiclovermd/BMW-MD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/toxiclovermd&style=social"></a>
   <a href="https://github.com/toxiclovermd/BMW-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/toxiclovermd/BMW-MD?style=social"></a>
-  <a href="https://github.com/toxiclovermd/BMW-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/toxiclovermd/BMW-MD?label=Watching&style=social"></a>
+  <a href="https://github.com/toxiclovermd/BMW-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/toxiclovermd?label=Watching&style=social"></a>
 </p>
 
 ---
