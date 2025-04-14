@@ -1,5 +1,6 @@
 
 
+
 const fs = require('fs-extra');
 const { Sequelize } = require('sequelize');
 if (fs.existsSync('set.env'))
@@ -11,11 +12,12 @@ const DATABASE_URL = process.env.DATABASE_URL === undefined
     : process.env.DATABASE_URL;
 module.exports = { session: process.env.SESSION_ID || '',
     PREFIXE: process.env.PREFIX || ".",
-    OWNER_NAME: process.env.OWNER_NAME || "Ibrahim adams",
-    NUMERO_OWNER : process.env.NUMERO_OWNER || "254717263689",              
+    OWNER_NAME: process.env.OWNER_NAME || "Ibrahim Adams",
+    NUMERO_OWNER : process.env.NUMERO_OWNER || " Ibrahim Adams",              
     AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || "yes",
     AUTO_DOWNLOAD_STATUS: process.env.AUTO_DOWNLOAD_STATUS || 'no',
-    BOT : process.env.BOT_NAME || 'B.M.W  URL : process.env.BOT_MENU_LINKS || 'https://telegra.ph/file/17c83719a1b40e02971e4.jpg',
+    BOT : process.env.BOT_NAME || 'BMW_MD',
+    URL : process.env.BOT_MENU_LINKS || 'https://telegra.ph/file/17c83719a1b40e02971e4.jpg',
     MODE: process.env.PUBLIC_MODE || "yes",
     PM_PERMIT: process.env.PM_PERMIT || 'yes',
     HEROKU_APP_NAME : process.env.HEROKU_APP_NAME,
