@@ -105,32 +105,131 @@
 
 
 
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
-  "name": "Charlie-mf",
+  "name": "toxicmd",
   "version": "2.0.0",
-  "description": "",
+  "description": "WhatsApp Multi Device Bot",
   "main": "charles.js",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"node charles.js\" \"node charles.js\"",
-    "c": "tsc"
+    "start": "node charles.js"
   },
   "keywords": [
-    "bot",
-    "Baileys",
-    "bmw",
-    "whatsapp",
+    "termux",
+    "whatsapp-openai",
     "whatsapp-bot",
-    "Ibrahim-Adams"
+    "whatsapp-baileys",
+    "baileys-md",
+    "bot-wa",
+    "bot-md",
+    "whatsapp-multi-device"
   ],
-  "author": "Ibrahim Adams",
+  "author": "Ibrahim",
   "license": "ISC",
-  "engines": {
-    "node": "18.x",
-    "npm": ">=9.6.3"
-  },
-
-    "dependencies": {
+  "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@brandond/findthelyrics": "^2.0.5",
     "@green-code/music-track-data": "^2.0.3",
@@ -163,8 +262,8 @@
     "child_process": "^1.0.2",
     "compile-run": "^2.3.4",
     "colors": "^1.4.0",
-    "countries-and-timezones": "^3.6.0",
     "crypto": "^1.0.1",
+    "countries-and-timezones": "^3.6.0",
     "deobfuscator": "^2.4.5",
     "dotenv": "^16.3.1",
     "express": "^4.19.2",
@@ -259,10 +358,7 @@
     "yt-search": "^2.10.4",
     "youtubedl-core": "^4.11.7"
   }
-}
-
-
-
+  }
 
 
       
