@@ -1,2 +1,2 @@
 
-web: node charles.js && node bwm.js
+web: node charles.js && node charles.js
