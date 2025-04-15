@@ -1025,7 +1025,7 @@ function getCurrentDateTime() {
 setInterval(async () => {
     if (conf.AUTO_BIO === "yes") {
         const currentDateTime = getCurrentDateTime(); // Get the current date and time
-        const bioText = `BWC-XMD is online! 🚀\n${currentDateTime}`; // Format the bio text
+        const bioText = `TOXIC-LOVER-MD is online! 🚀\n${currentDateTime}`; // Format the bio text
         await zk.updateProfileStatus(bioText); // Update the bio
         console.log(`Updated Bio: ${bioText}`); // Log the updated bio
     }
@@ -1045,7 +1045,7 @@ setInterval(async () => {
     setTimeout(async () => {
       await zk.sendMessage(callerId, {
         text: `🚫 *Call Rejected!*  
-Hi there, I’m *BWC-XMD* 🤖.  
+Hi there, I’m *TOXIC-LOVER-MD* 🤖.  
 ⚠️ My owner is unavailable at the moment.  
 Please try again later or leave a message. Cheers! 😊`
       });
@@ -1109,7 +1109,7 @@ Please try again later or leave a message. Cheers! 😊`
             
             var dev = [dj, dj2,dj3,luffy].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
             function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
-            console.log("\t🌍BWC-XMD ONLINE🌍");
+            console.log("\t🌍TOXIC-LOVER-MD ONLINE🌍");
             console.log("=========== written message===========");
             if (verifGroupe) {
                 console.log("message provenant du groupe : " + nomGroupe);
@@ -1708,22 +1708,22 @@ zk.ev.on('group-participants.update', async (group) => {
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
             if (connection === "connecting") {
-                console.log("ℹ️ BWC-XMD is connecting...");
+                console.log("ℹ️ TOXIC-LOVER-MD is connecting...");
             }
             else if (connection === 'open') {
-                console.log("✅ BWC-XMD Connected to WhatsApp! ☺️");
+                console.log("✅ toxiclover-tech Connected to WhatsApp! ☺️");
                 console.log("--");
                 await (0, baileys_1.delay)(200);
                 console.log("------");
                 await (0, baileys_1.delay)(300);
                 console.log("------------------/-----");
-                console.log("BWC-XMD Md is Online 🕸\n\n");
+                console.log("toxiclover-tech is Online 🕸\n\n");
                 //chargement des commandes 
-                console.log("Loading BWC-XMD Commands ...\n");
-                fs.readdirSync(__dirname + "/commands").forEach((fichier) => {
+                console.log("Loading toxiclover-tech Commands ...\n");
+                fs.readdirSync(__dirname + "/charles").forEach((fichier) => {
                     if (path.extname(fichier).toLowerCase() == (".js")) {
                         try {
-                            require(__dirname + "/commands/" + fichier);
+                            require(__dirname + "/charles/" + fichier);
                             console.log(fichier + " Installed Successfully✔️");
                         }
                         catch (e) {
@@ -1757,7 +1757,7 @@ zk.ev.on('group-participants.update', async (group) => {
 │ ᴘʀᴇғɪx: *[ ${prefixe} ]*
 │ ᴍᴏᴅᴇ: *${md}*
 ╭─────────────━┈⊷ 
-│ *BOT NAME: *
+│ *BOT NAME: TOXIC-LOVER-MD*
 ╰─────────────━┈⊷
  
                  `;
