@@ -53,8 +53,6 @@ const prefixe = conf.PREFIXE;
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
 const express = require('express');
-const path = require('path');
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
