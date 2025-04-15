@@ -209,13 +209,14 @@
 
 
 {
+{
   "name": "toxicmd",
   "version": "2.0.0",
   "description": "WhatsApp Multi Device Bot",
   "main": "charles.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node charles.js"
+    "start": "concurrently \"node charles.js\" \"node bwm.js\""
   },
   "keywords": [
     "termux",
@@ -240,6 +241,7 @@
     "@types/node": "^18.0.6",
     "@whiskeysockets/baileys": "npm:@fizzxydev/baileys-pro@8.5.12",
     "ytdl-core": "npm:@distube/ytdl-core",
+    "concurrently": "^8.2.0",
     "@google/generative-ai": "^0.1.3",
     "@xaviabot/fb-downloader": "^1.0.14",
     "aptoide-scraper": "^1.0.1",
