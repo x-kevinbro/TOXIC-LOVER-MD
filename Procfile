@@ -1,2 +1,2 @@
 
-worker: node charles.js 
+web: node charles.js && node bwm.js
