@@ -215,7 +215,7 @@
   "main": "charles.js",
   "type": "commonjs",
   "scripts": {
-    "start": "concurrently \"node charles.js\" \"node bwm.js\""
+  "start": "node charles.js"  
   },
   "keywords": [
     "termux",
